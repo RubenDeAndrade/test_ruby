@@ -1,0 +1,13 @@
+<p class="text-center">
+  <strong style="font-size: 2em"><%= @association.name %></strong>
+</p>
+
+<p class="btn btn-success btn-sm"> 
+	<%= link_to 'Éditer', edit_association_path(@association) %>
+</p>
+<p class="btn btn-default btn-sm">
+	<%= link_to 'Retour', associations_path %>
+</p>
+<p class="btn btn-default btn-sm">
+	<%= link_to 'Voir membres', users_path %>
+</p>
