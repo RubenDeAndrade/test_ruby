@@ -1,0 +1,18 @@
+                Prefix Verb   URI Pattern                                           Controller#Action
+association_user_index GET    /associations/:association_id/user(.:format)          user#index
+                       POST   /associations/:association_id/user(.:format)          user#create
+  new_association_user GET    /associations/:association_id/user/new(.:format)      user#new
+ edit_association_user GET    /associations/:association_id/user/:id/edit(.:format) user#edit
+      association_user GET    /associations/:association_id/user/:id(.:format)      user#show
+                       PATCH  /associations/:association_id/user/:id(.:format)      user#update
+                       PUT    /associations/:association_id/user/:id(.:format)      user#update
+                       DELETE /associations/:association_id/user/:id(.:format)      user#destroy
+          associations GET    /associations(.:format)                               associations#index
+                       POST   /associations(.:format)                               associations#create
+       new_association GET    /associations/new(.:format)                           associations#new
+      edit_association GET    /associations/:id/edit(.:format)                      associations#edit
+           association GET    /associations/:id(.:format)                           associations#show
+                       PATCH  /associations/:id(.:format)                           associations#update
+                       PUT    /associations/:id(.:format)                           associations#update
+                       DELETE /associations/:id(.:format)                           associations#destroy
+                  root GET    /                                                     pages#home

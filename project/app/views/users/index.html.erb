@@ -5,8 +5,8 @@
 <table class="table" style="margin-top: 3em">
   <thead>
     <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
+      <th>Prénom</th>
+      <th>Nom</th>
       <th>Admin</th>
       <th colspan="3"></th>
     </tr>
@@ -17,11 +17,15 @@
       <tr>
         <td><%= user.firstname %></td>
         <td><%= user.lastname %></td>
-        <td><%= user.admin %></td>
-        <td><%= link_to 'Show', user, class: 'btn btn-primary btn-sm' %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), 
+        <td>
+          <% if user.admin %>
+            <p>Oui</p>
+          <% end %>
+        </td>
+        <td><%= link_to 'Voir', user, class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Éditer', edit_user_path(user), 
                 class: 'btn btn-default btn-sm' %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
+        <td><%= link_to 'Supprimer', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Nouveau Membre', new_user_path %>

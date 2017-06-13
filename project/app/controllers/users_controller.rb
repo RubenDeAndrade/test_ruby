@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_association
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -62,6 +63,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def set_association
+      @association = Association.find_by_id(params[:id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
