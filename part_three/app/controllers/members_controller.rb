@@ -1,11 +1,11 @@
 class MembersController < ApplicationController
-  before_action :set_association
+  before_action :set_organization
   before_action :set_member, only: [:show, :edit, :update, :destroy]
 
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all
+    @members = @organization.members
   end
 
   # GET /members/1
@@ -15,7 +15,7 @@ class MembersController < ApplicationController
 
   # GET /members/new
   def new
-    @member = Member.new
+    @member = @organization.member.new
   end
 
   # GET /members/1/edit
@@ -25,7 +25,7 @@ class MembersController < ApplicationController
   # POST /members
   # POST /members.json
   def create
-    @member = Member.new(member_params)
+    @member = @organization.member.new(member_params)
 
     respond_to do |format|
       if @member.save
@@ -64,8 +64,8 @@ class MembersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_association
-      @association = Association.find_by_id(params[:id])
+    def set_organization
+      @organization = Organization.find_by_id(params[:organization_id])
     end
 
     def set_member

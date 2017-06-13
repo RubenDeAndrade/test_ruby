@@ -1,0 +1,17 @@
+                  Prefix Verb   URI Pattern                                                Controller#Action
+    organization_members GET    /organizations/:organization_id/members(.:format)          members#index
+                         POST   /organizations/:organization_id/members(.:format)          members#create
+ new_organization_member GET    /organizations/:organization_id/members/new(.:format)      members#new
+edit_organization_member GET    /organizations/:organization_id/members/:id/edit(.:format) members#edit
+     organization_member GET    /organizations/:organization_id/members/:id(.:format)      members#show
+                         PATCH  /organizations/:organization_id/members/:id(.:format)      members#update
+                         PUT    /organizations/:organization_id/members/:id(.:format)      members#update
+                         DELETE /organizations/:organization_id/members/:id(.:format)      members#destroy
+           organizations GET    /organizations(.:format)                                   organizations#index
+                         POST   /organizations(.:format)                                   organizations#create
+        new_organization GET    /organizations/new(.:format)                               organizations#new
+       edit_organization GET    /organizations/:id/edit(.:format)                          organizations#edit
+            organization GET    /organizations/:id(.:format)                               organizations#show
+                         PATCH  /organizations/:id(.:format)                               organizations#update
+                         PUT    /organizations/:id(.:format)                               organizations#update
+                         DELETE /organizations/:id(.:format)                               organizations#destroy
