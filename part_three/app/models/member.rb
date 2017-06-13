@@ -1,3 +1,3 @@
 class Member < ApplicationRecord
-  belongs_to :associations
+  belongs_to :organization
 end
